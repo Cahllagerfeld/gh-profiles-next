@@ -37,7 +37,9 @@ const Home = ({ list }: HomeProps) => {
   return (
     <>
       {list.map((listEl) => (
-        <p>{JSON.stringify(listEl)}</p>
+        <p key={listEl.username}>
+          {JSON.stringify(listEl)}
+        </p>
       ))}
     </>
   );
