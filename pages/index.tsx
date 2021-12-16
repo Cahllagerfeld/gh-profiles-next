@@ -34,11 +34,13 @@ export interface HomeProps {
 
 const Home = ({ list }: HomeProps) => {
   return (
-    <>
-      {list.map((listEl) => (
-       <Listitem item={listEl}/>
-      ))}
-    </>
+    <div className="flex justify-center">
+      <div>
+        {list.map((listEl) => (
+          <Listitem item={listEl} />
+        ))}
+      </div>
+    </div>
   );
 };
 

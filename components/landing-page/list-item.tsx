@@ -8,6 +8,7 @@ export interface ListItemInterface {
 const Listitem = ({ item }: { item: List.ListItem }) => {
   return (
     <div>
+      <div>{item.username}</div>
       <Screenshot url={item.image} alt={`profile from ${item.username}`} />
     </div>
   );
