@@ -8,8 +8,9 @@ export interface ListItemInterface {
 const Listitem = ({ item }: { item: List.ListItem }) => {
   return (
     <div>
-      <div>{item.username}</div>
-      <Screenshot url={item.image} alt={`profile from ${item.username}`} />
+      <a href={`https://github.com/${item.username}`} target="_blank">
+        <Screenshot url={item.image} alt={`profile from ${item.username}`} />
+      </a>
     </div>
   );
 };

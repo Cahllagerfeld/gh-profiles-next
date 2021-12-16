@@ -35,12 +35,10 @@ export interface HomeProps {
 
 const Home = ({ list }: HomeProps) => {
   return (
-    <div className="flex justify-center">
-      <div>
-        {list.map((listEl) => (
-          <Listitem item={listEl} />
-        ))}
-      </div>
+    <div className="grid grid-cols-3 gap-4">
+      {list.map((listEl) => (
+        <Listitem item={listEl} />
+      ))}
     </div>
   );
 };
