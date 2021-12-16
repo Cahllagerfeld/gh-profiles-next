@@ -1,4 +1,5 @@
-import type { ListItem } from "../types/list.interface";
+import type { List } from "../types/list.interface";
+import Listitem from "../components/landing-page/list-item";
 import path from "path";
 import fs from "fs";
 
@@ -19,9 +20,7 @@ export async function getStaticProps() {
     };
   });
   const output = profiles.map((profile) => ({
-    name: profile.name,
-    username: profile.username,
-    job: profile.job,
+    ...profile,
   }));
 
   return {
@@ -30,16 +29,14 @@ export async function getStaticProps() {
 }
 
 export interface HomeProps {
-  list: ListItem.ListItem[];
+  list: List.ListItem[];
 }
 
 const Home = ({ list }: HomeProps) => {
   return (
     <>
       {list.map((listEl) => (
-        <p key={listEl.username}>
-          {JSON.stringify(listEl)}
-        </p>
+       <Listitem item={listEl}/>
       ))}
     </>
   );

@@ -1,7 +1,8 @@
-export module ListItem {
+export module List {
   export interface ListItem {
-    username: string;
+    image: string;
+    issueId: number;
     name: string;
-    job: string;
+    username: string;
   }
 }
